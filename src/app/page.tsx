@@ -1,3 +1,4 @@
+import Cta from "@/components/cta";
 import Differentions from "@/components/differentiators";
 import Gallery from "@/components/gallery";
 import Header from "@/components/header";
@@ -12,6 +13,7 @@ export default function Home() {
       <Differentions />
       <Services />
       <Gallery />
+      <Cta />
     </main>
   );
 }
