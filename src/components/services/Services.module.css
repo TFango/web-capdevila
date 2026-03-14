@@ -36,7 +36,10 @@
   flex-direction: row;
   gap: 8px;
   overflow-x: auto;
-  scrollbar-width: none;
+  overflow-y: hidden;
+  /* scrollbar-width: none; */
+  /* scroll-snap-type: x mandatory; */
+  /* touch-action: pan-x; */
 }
 
 .cards::-webkit-scrollbar {
@@ -45,7 +48,8 @@
 
 .card {
   position: relative;
-  min-width: 260px;
+  scroll-snap-align: start;
+  min-width: 75vw;
   height: 380px;
   border-radius: 8px;
   background-size: cover;
