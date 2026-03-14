@@ -1,0 +1,128 @@
+.services {
+  padding: 64px 28px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cartel {
+  color: #cc0000;
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.25rem;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.cards::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  position: relative;
+  min-width: 260px;
+  height: 380px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    transform 0.3s ease,
+    opacity 0.5s ease;
+}
+
+.card:hover .overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 30%,
+    rgba(150, 0, 0, 0.88) 100%
+  );
+  transition: background 0.3s ease;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #cc0000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+  z-index: 2;
+}
+
+.card:hover::after {
+  transform: scaleX(1);
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 30%,
+    rgba(0, 0, 0, 0.88) 100%
+  );
+}
+
+.infoCard {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 18px;
+  z-index: 1;
+}
+
+.titleCard {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.descriptionCard {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #cccccc;
+  line-height: 1.5;
+}
