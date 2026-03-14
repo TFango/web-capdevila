@@ -1,0 +1,135 @@
+.hero {
+  position: relative;
+  min-height: calc(100dvh - 60px);
+  background-image: url("/images/hero.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0.92) 100%
+  );
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 0 28px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.poster {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  color: #ffffff;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  background: rgba(204, 0, 0, 0.2);
+  border: 1px solid rgba(204, 0, 0, 0.5);
+  padding: 4px 12px;
+  border-radius: 2px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  line-height: 0.95;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  animation: fadeUp 0.6s 0.15s ease both;
+}
+
+.titleRed {
+  display: block;
+  color: #cc0000;
+}
+
+.subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #bbbbbb;
+  line-height: 1.6;
+  margin-bottom: 0;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 32px;
+  animation: fadeUp 0.6s 0.45s ease both;
+}
+
+.primaryBtn {
+  background: #cc0000;
+  border: none;
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.primaryBtn:hover {
+  background: #aa0000;
+}
+
+.secondaryBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  padding: 13px 24px;
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+  width: 100%;
+}
+
+.secondaryBtn:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
