@@ -35,11 +35,7 @@
   display: flex;
   flex-direction: row;
   gap: 8px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  /* scrollbar-width: none; */
-  /* scroll-snap-type: x mandatory; */
-  /* touch-action: pan-x; */
+  overflow: hidden;
 }
 
 .cards::-webkit-scrollbar {
@@ -129,4 +125,65 @@
   font-weight: 300;
   color: #cccccc;
   line-height: 1.5;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #333333;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.arrow:hover {
+  border-color: #CC0000;
+  background: rgba(204, 0, 0, 0.1);
+}
+
+.arrowDisabled {
+  opacity: 0.25;
+  cursor: default;
+  pointer-events: none;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #333333;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, width 0.3s;
+}
+
+.dotActive {
+  background: #CC0000;
+  width: 20px;
+  border-radius: 3px;
 }

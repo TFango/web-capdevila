@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./Services.module.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const services = [
   {
@@ -26,6 +26,8 @@ const services = [
 
 export default function Services() {
   const cardsRef = useRef<HTMLDivElement[]>([]);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,23 +41,49 @@ export default function Services() {
       },
       { threshold: 0.15 },
     );
-
     cardsRef.current.forEach((card) => {
       if (card) observer.observe(card);
     });
-
     return () => observer.disconnect();
   }, []);
+
+  const scrollTo = (index: number) => {
+    if (!scrollRef.current) return;
+    const cardWidth = scrollRef.current.offsetWidth * 0.75 + 8; // 75vw + gap
+    scrollRef.current.scrollTo({ left: index * cardWidth, behavior: "smooth" });
+    setCurrent(index);
+  };
+
+  const prev = () => scrollTo(Math.max(current - 1, 0));
+  const next = () => scrollTo(Math.min(current + 1, services.length - 1));
 
   return (
     <section className={styles.services}>
       <div className={styles.container}>
-        <div className={styles.info}>
-          <span className={styles.cartel}>Servicios</span>
-          <h2 className={styles.title}>Donde trabajo</h2>
+        <div className={styles.header}>
+          <div className={styles.info}>
+            <span className={styles.cartel}>Servicios</span>
+            <h2 className={styles.title}>Donde trabajo</h2>
+          </div>
+          <div className={styles.arrows}>
+            <button
+              className={`${styles.arrow} ${current === 0 ? styles.arrowDisabled : ""}`}
+              onClick={prev}
+              aria-label="Anterior"
+            >
+              ←
+            </button>
+            <button
+              className={`${styles.arrow} ${current === services.length - 1 ? styles.arrowDisabled : ""}`}
+              onClick={next}
+              aria-label="Siguiente"
+            >
+              →
+            </button>
+          </div>
         </div>
 
-        <div className={styles.cards}>
+        <div className={styles.cards} ref={scrollRef}>
           {services.map((service, i) => (
             <div
               key={i}
@@ -74,6 +102,17 @@ export default function Services() {
                 <p className={styles.descriptionCard}>{service.description}</p>
               </div>
             </div>
+          ))}
+        </div>
+
+        <div className={styles.dots}>
+          {services.map((_, i) => (
+            <button
+              key={i}
+              className={`${styles.dot} ${i === current ? styles.dotActive : ""}`}
+              onClick={() => scrollTo(i)}
+              aria-label={`Ir a ${services[i].title}`}
+            />
           ))}
         </div>
       </div>

@@ -5,17 +5,21 @@
 }
 
 :root {
-  --red: #CC0000;
-  --black: #0A0A0A;
+  --red: #cc0000;
+  --black: #0a0a0a;
   --dark: #111111;
-  --steel: #1E1E1E;
-  --metal: #2A2A2A;
+  --steel: #1e1e1e;
+  --metal: #2a2a2a;
   --gray: #888888;
-  --white: #FFFFFF;
+  --white: #ffffff;
 }
 
 body {
   background-color: var(--black);
   color: var(--white);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
