@@ -6,20 +6,20 @@ import { useEffect, useRef, useState } from "react";
 const services = [
   {
     title: "Naval",
-    description:
-      "Trabajo con los estándares que exige la industria. Reparación y montaje en embarcaciones.",
+    description: "Trabajo con los estándares que exige la industria. Reparación y montaje en embarcaciones.",
+    items: ["Reparación y Soldadura Naval", "Reparación de Portones de Pesca"],
     img: "/images/serviceOne.jpeg",
   },
   {
     title: "Doméstica",
-    description:
-      "Mismo nivel de exigencia para tu hogar. Sin importar el tamaño.",
+    description: "Mismo nivel de exigencia para tu hogar. Sin importar el tamaño.",
+    items: ["Soldadura en general", "Portones y Rejas a medida"],
     img: "/images/serviceTwo.jpeg",
   },
   {
     title: "Industrial",
-    description:
-      "Trabajo con maquinaria pesada, estructuras y reparaciones de plantas.",
+    description: "Trabajo con maquinaria pesada, estructuras y reparaciones de plantas.",
+    items: ["Mobiliario industrial", "Reparaciones y Refuerzos de Estructuras"],
     img: "/images/serviceThree.jpg",
   },
 ];
@@ -39,17 +39,15 @@ export default function Services() {
           }
         });
       },
-      { threshold: 0.15 },
+      { threshold: 0.15 }
     );
-    cardsRef.current.forEach((card) => {
-      if (card) observer.observe(card);
-    });
+    cardsRef.current.forEach((card) => { if (card) observer.observe(card); });
     return () => observer.disconnect();
   }, []);
 
   const scrollTo = (index: number) => {
     if (!scrollRef.current) return;
-    const cardWidth = scrollRef.current.offsetWidth * 0.75 + 8; // 75vw + gap
+    const cardWidth = scrollRef.current.offsetWidth * 0.75 + 8;
     scrollRef.current.scrollTo({ left: index * cardWidth, behavior: "smooth" });
     setCurrent(index);
   };
@@ -70,16 +68,12 @@ export default function Services() {
               className={`${styles.arrow} ${current === 0 ? styles.arrowDisabled : ""}`}
               onClick={prev}
               aria-label="Anterior"
-            >
-              ←
-            </button>
+            >←</button>
             <button
               className={`${styles.arrow} ${current === services.length - 1 ? styles.arrowDisabled : ""}`}
               onClick={next}
               aria-label="Siguiente"
-            >
-              →
-            </button>
+            >→</button>
           </div>
         </div>
 
@@ -87,9 +81,7 @@ export default function Services() {
           {services.map((service, i) => (
             <div
               key={i}
-              ref={(el) => {
-                if (el) cardsRef.current[i] = el;
-              }}
+              ref={(el) => { if (el) cardsRef.current[i] = el; }}
               className={styles.card}
               style={{
                 backgroundImage: `url(${service.img})`,
@@ -100,6 +92,15 @@ export default function Services() {
               <div className={styles.infoCard}>
                 <p className={styles.titleCard}>{service.title}</p>
                 <p className={styles.descriptionCard}>{service.description}</p>
+                <div className={styles.divider} />
+                <ul className={styles.list}>
+                  {service.items.map((item, j) => (
+                    <li key={j} className={styles.listItem}>
+                      <span className={styles.listDot} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
