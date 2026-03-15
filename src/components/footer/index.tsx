@@ -39,7 +39,7 @@ export default function Footer() {
           <span className={styles.linkPlain}>Naval</span>
           <span className={styles.linkPlain}>Industrial</span>
           <span className={styles.linkPlain}>Construcción</span>
-          <span className={styles.linkPlain}>Doméstica</span>
+          <span className={styles.linkPlain}>Residencial</span>
         </div>
       </div>
 

@@ -18,7 +18,7 @@ export default function Hero() {
             <span className={styles.titleRed}>CONSTANTE</span>
           </h1>
           <p className={styles.subtitle}>
-            Soldadura profesional Naval, industrial y domestica en Mar del Plata
+            Soldadura profesional Naval, industrial y residencial en Mar del Plata
           </p>
         </div>
 

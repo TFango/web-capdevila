@@ -29,7 +29,7 @@ const cards = [
     icon: "/images/logos/license.svg",
   },
   {
-    title: "Naval, industrial y doméstica",
+    title: "Naval, industrial y residencial",
     description:
       "El mismo nivel de exigencia sin importar si es una estructura naval o un portón.",
     icon: "/images/logos/services.svg",
