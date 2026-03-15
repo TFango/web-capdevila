@@ -11,15 +11,8 @@ const cards = [
     icon: "/images/logos/experience.svg",
   },
   {
-    title: "Te cotizo gratis y voy hasta tu lugar",
-    description:
-      "No te cobro la visita. Evalúo el trabajo en el lugar antes de darte un número.",
-    icon: "/images/logos/money.svg",
-  },
-  {
-    title: "Respondo hoy, empiezo cuando vos necesitás",
-    description:
-      "Sin esperas innecesarias. Disponibilidad inmediata para proyectos urgentes.",
+    title: "Forma de trabajo",
+    description: "Trabajo preciso, seguro y adaptado a cada necesidad.",
     icon: "/images/logos/time.svg",
   },
   {
@@ -29,9 +22,9 @@ const cards = [
     icon: "/images/logos/license.svg",
   },
   {
-    title: "Naval, industrial y residencial",
+    title: "Todo tipo de soluciones",
     description:
-      "El mismo nivel de exigencia sin importar si es una estructura naval o un portón.",
+      "Brindo soluciones de soldadura para industrias, construccion y sector naval.",
     icon: "/images/logos/services.svg",
   },
 ];
