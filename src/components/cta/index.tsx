@@ -16,12 +16,7 @@ export default function Cta() {
       <div className={styles.container}>
         <div className={styles.top}>
           <span className={styles.cartel}>Contacto</span>
-          <h2 className={styles.title}>
-            Escribime para armar un presupuesto
-          </h2>
-          <p className={styles.subtitle}>
-            La visita no te cuesta nada. Respondo hoy.
-          </p>
+          <h2 className={styles.title}>Diseñamos y armamos presupuesto</h2>
         </div>
 
         <div className={styles.divider} />
@@ -30,14 +25,6 @@ export default function Cta() {
           <div className={styles.feature}>
             <span className={styles.dot} />
             <span>Presupuesto sin cargo</span>
-          </div>
-          <div className={styles.feature}>
-            <span className={styles.dot} />
-            <span>Voy hasta tu lugar</span>
-          </div>
-          <div className={styles.feature}>
-            <span className={styles.dot} />
-            <span>Respuesta el mismo día</span>
           </div>
         </div>
 

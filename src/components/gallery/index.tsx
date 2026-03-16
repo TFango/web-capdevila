@@ -6,7 +6,7 @@ export default function Gallery() {
       <div className={styles.container}>
 
         <div className={styles.info}>
-          <span className={styles.cartel}>Mis laburos</span>
+          <span className={styles.cartel}>Mis trabajos</span>
           <h2 className={styles.title}>Galería de fotos</h2>
         </div>
 
